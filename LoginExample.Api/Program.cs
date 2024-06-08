@@ -1,16 +1,19 @@
-using System.Security.Claims;
-using LoginExample.Api.Config;
 using LoginExample.Api.Database;
 using LoginExample.Api.Extensions;
+using LoginExample.Api.Interfaces;
 using LoginExample.Api.Models;
-using Microsoft.AspNetCore.Authentication;
+using LoginExample.Api.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
-services.AddCustomServices();
+services.AddEmail(builder.Configuration);
+builder.Services.AddTransient<IEmailService, EmailService>();
+builder.Services.AddTransient<IEmailSender, EmailSender>();
+
 services.AddControllers();
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
@@ -43,13 +46,6 @@ if (app.Environment.IsDevelopment())
     
     app.ApplyMigrations();
 }
-
-app.MapGet("users/me", async (ClaimsPrincipal claims, AuthContext context) =>
-{
-    var userId = claims.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
-
-    return await context.Users.FindAsync(userId);
-}).RequireAuthorization();
 
 app.UseHttpsRedirection();
 app.UseAuthentication();

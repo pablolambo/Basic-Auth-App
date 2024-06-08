@@ -24,9 +24,19 @@ LoginExample is a simple ASP.NET Core web application that demonstrates user aut
 
 ## Getting Started
 
-To run the LoginExample application locally:
+### To run the LoginExample application locally:
 
 1. Clone this repository to your local machine.
 2. Ensure you have the .NET 8 SDK installed.
-3. Navigate to the project directory of the api and run `dotnet run`.
-4. Navigate to the project directory of the UI and run `dotnet run`.
+3. To be able to use the email service, we must have the local smtp server running, I used a development email server which is called smtp4dev.
+```bash
+dotnet tool install -g Rnwood.Smtp4dev
+```
+4. Then run the server by just writing smtp4dev in the shell.
+```bash
+smtp4dev
+```
+The server is now running at http://localhost:5000
+
+5. Navigate to the project directory of the api and run `dotnet run`.
+6. Navigate to the project directory of the UI and run `dotnet run`.
