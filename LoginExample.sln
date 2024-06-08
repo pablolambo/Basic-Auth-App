@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginExample.Api", "LoginEx
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5BAAB1A5-F0B8-4CB9-BA68-F90EC3B8A9ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blazor-app", "blazor-app\blazor-app.csproj", "{C0404A26-EB43-497E-8E06-485EBD5E4766}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,8 +16,13 @@ Global
 		{3D2C741D-DE34-4435-AD91-02FC17035E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D2C741D-DE34-4435-AD91-02FC17035E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D2C741D-DE34-4435-AD91-02FC17035E6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0404A26-EB43-497E-8E06-485EBD5E4766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0404A26-EB43-497E-8E06-485EBD5E4766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0404A26-EB43-497E-8E06-485EBD5E4766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0404A26-EB43-497E-8E06-485EBD5E4766}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3D2C741D-DE34-4435-AD91-02FC17035E6D} = {5BAAB1A5-F0B8-4CB9-BA68-F90EC3B8A9ED}
+		{C0404A26-EB43-497E-8E06-485EBD5E4766} = {5BAAB1A5-F0B8-4CB9-BA68-F90EC3B8A9ED}
 	EndGlobalSection
 EndGlobal

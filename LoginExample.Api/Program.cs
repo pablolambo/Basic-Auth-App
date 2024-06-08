@@ -3,6 +3,7 @@ using LoginExample.Api.Config;
 using LoginExample.Api.Database;
 using LoginExample.Api.Extensions;
 using LoginExample.Api.Models;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 
@@ -15,9 +16,16 @@ services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
 
 services.AddAuthorization();
-services.AddAuthentication()
+services.AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
+        options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+    })
     .AddCookie(IdentityConstants.ApplicationScheme)
-    .AddBearerToken(IdentityConstants.BearerScheme);   
+    .AddBearerToken(IdentityConstants.BearerScheme, options =>
+    {
+        // Configure JWT bearer options if needed
+    });
 
 services.AddIdentityCore<User>()
     .AddEntityFrameworkStores<AuthContext>()
@@ -44,6 +52,7 @@ app.MapGet("users/me", async (ClaimsPrincipal claims, AuthContext context) =>
 }).RequireAuthorization();
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 

@@ -1,0 +1,18 @@
+@page "/login"
+
+<h3>Login</h3>
+
+<form @onsubmit="SubmitForm">
+    <div>
+        <label for="email">Username:</label>
+        <input id="email" type="text" @bind="Email" />
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input id="password" type="password" @bind="Password" />
+    </div>
+    <button type="submit">Login</button>
+</form>
+
+<h1>@Result</h1>
+<h3>@Content</h3>

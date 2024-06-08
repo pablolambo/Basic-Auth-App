@@ -1,0 +1,37 @@
+﻿@inherits LayoutComponentBase
+
+<PageTitle>blazor-app</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <!-- Replace NavMenu with a navigation link to the login page -->
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <NavLink class="nav-link" href="/">Home</NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" href="/login">Login</NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" href="/register">Register</NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" href="/restricted">Restricted</NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" href="/logout">Logout</NavLink>
+            </li>
+        </ul>
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        </div>
+
+        <article class="content px-4">
+            <!-- Display the content of the current page -->
+            @Body
+        </article>
+    </main>
+</div>
