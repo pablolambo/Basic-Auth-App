@@ -12,6 +12,6 @@ public partial class LogoutForm : ComponentBase
         
         var content = new StringContent("application/json");
 
-        await HttpClient.PostAsync("https://localhost:7196/logout", content);
+        await HttpClient.PostAsync("https://localhost:7196/account/logout", content);
     }
 }
