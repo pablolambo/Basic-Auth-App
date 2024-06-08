@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
 builder.Services.AddDbContext<AuthContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("AuthContext")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 services.AddCustomServices();
 services.AddControllers();
