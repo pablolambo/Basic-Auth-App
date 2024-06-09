@@ -1,10 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginExample.Api", "LoginExample.Api\LoginExample.Api.csproj", "{3D2C741D-DE34-4435-AD91-02FC17035E6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicAuthApp.Api", "src\BasicAuthApp.Api\BasicAuthApp.Api.csproj", "{3D2C741D-DE34-4435-AD91-02FC17035E6D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5BAAB1A5-F0B8-4CB9-BA68-F90EC3B8A9ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blazor-app", "blazor-app\blazor-app.csproj", "{C0404A26-EB43-497E-8E06-485EBD5E4766}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicAuthApp.Presentation", "src\BasicAuthApp.Presentation\BasicAuthApp.Presentation.csproj", "{C0404A26-EB43-497E-8E06-485EBD5E4766}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicAuthApp.Infrastructure", "src\BasicAuthApp.Infrastructure\BasicAuthApp.Infrastructure.csproj", "{E435E06F-6A00-4D48-A682-FF49CAAF8C81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicAuthApp.Application", "src\BasicAuthApp.Application\BasicAuthApp.Application.csproj", "{874C53A6-49EB-4F4A-9907-08E34B03A2DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,9 +24,19 @@ Global
 		{C0404A26-EB43-497E-8E06-485EBD5E4766}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0404A26-EB43-497E-8E06-485EBD5E4766}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0404A26-EB43-497E-8E06-485EBD5E4766}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E435E06F-6A00-4D48-A682-FF49CAAF8C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E435E06F-6A00-4D48-A682-FF49CAAF8C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E435E06F-6A00-4D48-A682-FF49CAAF8C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E435E06F-6A00-4D48-A682-FF49CAAF8C81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{874C53A6-49EB-4F4A-9907-08E34B03A2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{874C53A6-49EB-4F4A-9907-08E34B03A2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{874C53A6-49EB-4F4A-9907-08E34B03A2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{874C53A6-49EB-4F4A-9907-08E34B03A2DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3D2C741D-DE34-4435-AD91-02FC17035E6D} = {5BAAB1A5-F0B8-4CB9-BA68-F90EC3B8A9ED}
 		{C0404A26-EB43-497E-8E06-485EBD5E4766} = {5BAAB1A5-F0B8-4CB9-BA68-F90EC3B8A9ED}
+		{E435E06F-6A00-4D48-A682-FF49CAAF8C81} = {5BAAB1A5-F0B8-4CB9-BA68-F90EC3B8A9ED}
+		{874C53A6-49EB-4F4A-9907-08E34B03A2DE} = {5BAAB1A5-F0B8-4CB9-BA68-F90EC3B8A9ED}
 	EndGlobalSection
 EndGlobal

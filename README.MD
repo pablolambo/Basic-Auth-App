@@ -1,15 +1,24 @@
-# LoginExample
+# Basic Auth App
 
-## What is LoginExample?
+## What is Basic Auth App?
 
-LoginExample is a simple ASP.NET Core web application that demonstrates user authentication and logout functionality. It provides endpoints for user login, register, logout and much more, allowing users to securely access and manage their accounts. Additionally, the project includes a Blazor component for integrating client-side interactivity with the part of the API.
+Basic Auth App is a simple ASP.NET Core web application that demonstrates user authentication and logout functionality. It provides endpoints for user login, register, logout and much more, allowing users to securely access and manage their accounts. Additionally, the project includes a Blazor component for integrating client-side interactivity with the part of the API.
 
 ## Features
 
-- **User Authentication**: Users can log in using their credentials (e.g., email and password) to access protected resources.
-- **Logout Functionality**: Users can log out from their accounts to end their session and protect their privacy.
-- **Blazor Component**: A Blazor component is included for interactive client-side features, enhancing the user experience.
-- **Swagger Documentation**: The application includes Swagger documentation to facilitate API testing and exploration.
+- **POST /register**: Registers a new user and send's him verification code for email.
+- **POST /login**: Logs in a user using cookies.
+- **POST /refresh**: Refreshes the authentication bearer token.
+- **GET /confirmEmail**: Confirms a user's email address.
+- **POST /resendConfirmationEmail**: Resends the email confirmation.
+- **POST /forgotPassword**: Sends a password reset code to the user's email.
+- **POST /resetPassword**: Resets the user's password using the provided reset code.
+- **POST /manage/2fa**: Manages two-factor authentication settings.
+- **GET /manage/info**: Retrieves the current user's information.
+- **POST /manage/info**: Updates the current user's information.
+- **GET /account/id**: Retrieves the currently logged-in user's ID.
+- **GET /account/email**: Retrieves the email of the currently logged-in user.
+- **POST /account/logout**: Logs out the authenticated user.
 
 ## Technologies Used
 
@@ -22,9 +31,30 @@ LoginExample is a simple ASP.NET Core web application that demonstrates user aut
 - **SQLite**: The application uses SQLite as its database provider for storing user data.
 - **.NET 8**: The project is built using .NET 8, the latest version of the .NET framework.
 
+## Security
+
+- **Transport Layer Security (TLS)**: The communication between the client and server is encrypted using TLS, ensuring data confidentiality and integrity.
+
+## EF Core Migrations
+
+Entity Framework Core migrations are used to manage changes to your database schema over time, allowing you to evolve your database alongside your application.
+
+### Adding a Migration
+
+To add a new migration, run the following command at the root directory:
+
+```bash
+dotnet ef migrations add NewMigration --project .\LoginExample.Infrastructure\ --startup-project .\LoginExample.Api\
+```
+
+Apply migrations to your database:
+```bash
+dotnet ef database update --project .\LoginExample.Infrastructure\ --startup-project .\LoginExample.Api\
+``` 
+
 ## Getting Started
 
-### To run the LoginExample application locally:
+### To run the Basic Auth App application locally:
 
 1. Clone this repository to your local machine.
 2. Ensure you have the .NET 8 SDK installed.
@@ -40,3 +70,5 @@ The server is now running at http://localhost:5000
 
 5. Navigate to the project directory of the api and run `dotnet run`.
 6. Navigate to the project directory of the UI and run `dotnet run`.
+
+Please note that not everything may work, for example i haven't touched /manage/2fa endpoint. It comes out of the box from asp.net, that's why this app is basic.
