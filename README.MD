@@ -18,7 +18,7 @@ Basic Auth App is a simple ASP.NET Core web application that demonstrates user a
 - **POST /manage/info**: Updates the current user's information.
 - **GET /account/id**: Retrieves the currently logged-in user's ID.
 - **GET /account/email**: Retrieves the email of the currently logged-in user.
-- **POST /account/logout**: Logs out the authenticated user.
+- **POST /account/logout**: Logs out the authenticated user. 
 
 ## Technologies Used
 
